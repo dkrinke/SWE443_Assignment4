@@ -2,6 +2,8 @@
 public class House {
 	private int stones;
 	private House rightNeighbor;
+	private boolean myTurn;
+	
 	public House(){	// Default House has no stones and no rightNeighbor
 		this.stones = 0;
 		rightNeighbor = null;
@@ -19,39 +21,19 @@ public class House {
 		
 	}
 
-	private int stoneCount;
-	private boolean myTurn;
-	private String name;
-	
-	
-	
-	public void setStoneCount(int count){
-		if(count < 0){
-			throw new IllegalArgumentException("Player cannout have negative stones!");
-		}
-		this.stoneCount = count;
-	}
-	public int getStoneCount(){
-		return this.stoneCount;
-	}
-	public int incrementStoneCount(){
+	public int incrementStones(){ //Increment a House's stones when sowing occurs
 		return this.stoneCount++;
 	}
 	
 	
-	public void setMyTurn(boolean turn){
+	public void setMyTurn(boolean turn){ //Set the Player's turn
 		this.myTurn = turn;
 	}
-	public boolean isMyTurn(){
+	public boolean isMyTurn(){ //Determine who's turn it is
 		return myTurn;
 	}
 	
 	
 	
-	public String getName(){
-		return this.name;
-	}
-	public void setName(String name){
-		this.name=name;
-	}
+	
 }
