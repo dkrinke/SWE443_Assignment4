@@ -9,7 +9,7 @@ public class House {
 	
 	public void setStoneCount(int count){
 		if(count < 0){
-			throw new IllegalArgumentException("Player cannout have negative stones!");
+			throw new IllegalArgumentException("Player cannout have negative stones!");
 		}
 		this.stoneCount = count;
 	}
@@ -17,14 +17,11 @@ public class House {
 		return this.stoneCount;
 	}
 	public int incrementStoneCount(){
-		this.stoneCount++;
+		return this.stoneCount++;
 	}
 	
 	
 	public void setMyTurn(boolean turn){
-		if(turn==null){
-			throw new IllegalArgumentException("Player's turn cannot be null!");
-		}
 		this.myTurn = turn;
 	}
 	public boolean isMyTurn(){
@@ -36,7 +33,7 @@ public class House {
 	public String getName(){
 		return this.name;
 	}
-	public void setName(){
-		this.name;
+	public void setName(String name){
+		this.name=name;
 	}
 }
