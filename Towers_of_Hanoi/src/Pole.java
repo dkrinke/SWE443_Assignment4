@@ -15,7 +15,7 @@ public class Pole implements stack {
     private int id = -1;
     private ArrayList<Integer> nextToList;
     private ArrayList<Ring> stack;
-
+	
     public Pole(int id) {
         this.setId(id);
         this.nextToList = new ArrayList<Integer>();
@@ -39,6 +39,13 @@ public class Pole implements stack {
     }
 
     public boolean addRing(Ring ring) {
+    	if(this.top() != null) {
+    		Ring currentTop = top();
+    		if(ring.getSize() >= currentTop.getSize()) return false;
+    		ring.setOnTopOf(currentTop);
+    	}
+    	
+    	ring.setOnPole(this);
         return this.push(ring);
     }
 
@@ -55,6 +62,7 @@ public class Pole implements stack {
     }
 
     public Ring top() {
+    	if(this.stack.size() <= 0) return null;
         return this.stack.get(this.count()-1);
     }
 

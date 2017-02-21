@@ -3,7 +3,7 @@
  */
 public class Ring {
 
-    private int size = -1;
+    private int size = -1;		//The larger the number, the bigger the ring.
     private String color = "";
     private Ring onTopOf = null;
     private Pole onPole = null;
@@ -40,18 +40,29 @@ public class Ring {
     }
 
     public boolean moveTo(Pole pole) {
-        if(pole.addRing(this)) {
-            this.onPole = pole;
-            return true;
-        }
+        if(pole.addRing(this)) return true;
         return false;
     }
 
     public boolean onTopOf(Ring ring) {
         if(ring.getSize() < this.getSize()) {
-            this.onTopOf = ring;
+            this.setOnTopOf(ring);
             return true;
         }
         return false;
     }
+	public Ring getOnTopOf() {
+		return onTopOf;
+	}
+	public void setOnTopOf(Ring onTopOf) {
+		this.onTopOf = onTopOf;
+	}
+
+	public Pole getOnPole() {
+		return onPole;
+	}
+
+	public void setOnPole(Pole onPole) {
+		this.onPole = onPole;
+	}
 }
