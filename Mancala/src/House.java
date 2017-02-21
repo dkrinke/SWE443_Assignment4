@@ -50,6 +50,19 @@ public class House {
 		return myTurn;
 	}
 	
+	public void ReDistributeCounterclockwise(){
+		if(this.opposite == null){
+			throw new NoSuchFieldException("Store does not have a right neighbor");
+		}
+		int stonesInHand = stones;
+		stones = 0;
+		while(stonesInHand != 0){
+			stonesInHand--;
+			House ptr = this.opposite;
+			ptr.stones++;
+			ptr = ptr.opposite;
+		}
+	}
 	
 	
 	
