@@ -50,22 +50,7 @@ public class House {
 		return myTurn;
 	}
 	
-	public void ReDistributeCounterclockwise(){
-		
-		int stonesInHand = stones;
-		stones = 0;
-		House ptr = this.rightNeighbor;
-		
-		while(stonesInHand != 0){
-			if(ptr.rightNeighbor == null){
-				throw new NullPointerException("Store does not have a right neighbor");
-			}
-			stonesInHand--;
-			ptr.incrementStones();
-			ptr = ptr.getRightNeighbor();
-			
-		}
-	}
+	
 	
 	
 	

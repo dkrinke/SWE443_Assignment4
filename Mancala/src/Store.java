@@ -32,6 +32,22 @@ public class Store extends House{
 			throw new IllegalArgumentException("Cannot set Opposite to null or self!");
 
 	}
+	public void ReDistributeCounterclockwise(){
+		
+		int stonesInHand = this.getStones();
+		this.setStones(0);
+		House ptr = this.getRightNeighbor();
+		
+		while(stonesInHand != 0){
+			if(ptr.getRightNeighbor() == null){
+				throw new NullPointerException("Store does not have a right neighbor");
+			}
+			stonesInHand--;
+			ptr.incrementStones();
+			ptr = ptr.getRightNeighbor();
+			
+		}
+	}
 	
 	
 }
