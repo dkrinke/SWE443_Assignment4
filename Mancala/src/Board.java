@@ -30,8 +30,12 @@ public class Board {
 		House twoKalah = new House(0,false);
 		previousA.setRightNeighbor(oneKalah);
 		oneKalah.setRightNeighbor(previousB);
-		playerTwo.get(playerTwo.size()-1).getRightNeighbor(twoKalah);
+		playerTwo.get(playerTwo.size()-1).setRightNeighbor(twoKalah);
 		whoseTurn = true;
+	}
+	
+	public void selectStore(){
+		
 	}
 	
 	public void startGame(){
