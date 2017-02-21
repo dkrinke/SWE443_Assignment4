@@ -5,9 +5,10 @@ public class Store extends House{
 	public Store(){
 		super(); 
 		this.setOpposite(null);
+		this.setStones(3);
 	}
-	public Store(int initStones){
-		super(initStones);
+	public Store(boolean turn){
+		super(3,turn);
 		this.setOpposite(null);
 	}
 	public Store(int initStones, boolean turn){
@@ -19,7 +20,7 @@ public class Store extends House{
 	}
 	
 	public int takeOppositePebbles(){
-		return this.stones;
+		return this.getStones();
 	}
 
 	public void setOpposite(Store op){

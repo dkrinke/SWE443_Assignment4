@@ -9,8 +9,8 @@ public class House {
 		this.setRightNeighbor(null);
 		this.setMyTurn(true);
 	}
-	public House(int initStones){
-		this.setStones(initStones);
+	public House(boolean turn){
+		this.setStones(0);
 		this.setRightNeighbor(null);
 		this.setMyTurn(true);
 	}
@@ -58,7 +58,7 @@ public class House {
 		
 		while(stonesInHand != 0){
 			if(ptr.rightNeighbor == null){
-				throw new NoSuchFieldException("Store does not have a right neighbor");
+				throw new NullPointerException("Store does not have a right neighbor");
 			}
 			stonesInHand--;
 			ptr.incrementStones();
