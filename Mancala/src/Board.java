@@ -1,9 +1,19 @@
 
 public class Board {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	private ArrayList<House> playerOne;
+	private ArrayList<House> playerTwo;
+	private boolean whoseTurn;
+	
+	public Board(){
+		playerOne = new ArrayList<House>();
+		playerTwo = new ArrayList<House>();
+		playerOne.add()
 	}
+	public void startGame(){
+		//Create the Board
+	}
+	
+	
 
 }

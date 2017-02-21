@@ -1,6 +1,7 @@
 
 public class Store extends House{
 	private Store opposite;
+	
 	public Store(){
 		super(); 
 		this.setOpposite(null);
@@ -17,14 +18,13 @@ public class Store extends House{
 		return this.opposite;
 	}
 	
-//	public int takeOppositePebbles(){
-//		
-//	}
-
+	public int takeOppositePebbles(){
+		return this.stones;
+	}
 
 	public void setOpposite(Store op){
 		this.opposite = op;
-		if(op != null && op.opposite != this){
+		if(op != null && op.getOpposite() != this){
 			op.setOpposite(this);
 		}
 		else
@@ -32,17 +32,5 @@ public class Store extends House{
 
 	}
 	
-	public void ReDistributeCounterclockwise(){
-		if(this.opposite == null){
-			throw new NoSuchFieldException("Store does not have a right neighbor");
-		}
-		int stonesInHand = stones;
-		stones = 0;
-		while(stonesInHand != 0){
-			stonesInHand--;
-			House ptr = this.opposite;
-			ptr.stones++;
-			ptr = ptr.opposite;
-		}
-	}
+	
 }

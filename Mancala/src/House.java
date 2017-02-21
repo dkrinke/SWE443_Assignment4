@@ -51,16 +51,19 @@ public class House {
 	}
 	
 	public void ReDistributeCounterclockwise(){
-		if(this.opposite == null){
-			throw new NoSuchFieldException("Store does not have a right neighbor");
-		}
+		
 		int stonesInHand = stones;
 		stones = 0;
+		House ptr = this.rightNeighbor;
+		
 		while(stonesInHand != 0){
+			if(ptr.rightNeighbor == null){
+				throw new NoSuchFieldException("Store does not have a right neighbor");
+			}
 			stonesInHand--;
-			House ptr = this.opposite;
-			ptr.stones++;
-			ptr = ptr.opposite;
+			ptr.incrementStones();
+			ptr = ptr.getRightNeighbor();
+			
 		}
 	}
 	
