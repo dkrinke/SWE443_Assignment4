@@ -5,9 +5,21 @@ public class House {
 	private boolean myTurn;
 	
 	public House(){	// Default House has no stones and no rightNeighbor
-		this.stones = 0;
-		rightNeighbor = null;
+		this.setStones(0);
+		this.setRightNeighbor(null);
+		this.setMyTurn(true);
 	}
+	public House(int initStones){
+		this.setStones(initStones);
+		this.setRightNeighbor(null);
+		this.setMyTurn(true);
+	}
+	public House(int initStones, boolean turn){
+		this.setStones(initStones);
+		this.setRightNeighbor(null);
+		this.setMyTurn(turn);
+	}
+	public House(int )
 	public int getStones(){ // Returns the number of stones in the house
 		return this.stones;
 	}
@@ -22,9 +34,6 @@ public class House {
 	}
 	public void setRightNeighbor(House h){// Sets the rightNeighbor of the house
 		rightNeighbor = h;
-		if(h != null && h.getRightNeighbor() != this){
-			h.setRightNeighbor(this);
-		}
 	}
 	public void incrementStones(){ //Increment a House's stones when sowing occurs
 		this.stoneCount++;
