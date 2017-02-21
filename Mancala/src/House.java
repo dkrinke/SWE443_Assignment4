@@ -19,10 +19,12 @@ public class House {
 		this.setRightNeighbor(null);
 		this.setMyTurn(turn);
 	}
-	public House(int )
+	//public House(int )
+	
 	public int getStones(){ // Returns the number of stones in the house
 		return this.stones;
 	}
+	
 	public void setStones(int count){// Updates the number of stones in the house
 		if(count < 0){
 			throw new IllegalArgumentException("Player can't have negative stones!");
@@ -33,6 +35,11 @@ public class House {
 		return this.rightNeighbor;
 	}
 	public void setRightNeighbor(House h){// Sets the rightNeighbor of the house
+		if(h == null)
+			throw new IllegalArgumentException("Right Neighbor cannot be null!");
+		if(h == this)
+			throw new IllegalArgumentException("this cannot have itself as right neighbor!");
+
 		rightNeighbor = h;
 	}
 	public void incrementStones(){ //Increment a House's stones when sowing occurs
@@ -44,6 +51,8 @@ public class House {
 	public boolean isMyTurn(){ //Determine who's turn it is
 		return myTurn;
 	}
+	
+	
 	
 	
 	
