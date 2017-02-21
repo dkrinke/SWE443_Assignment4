@@ -14,7 +14,7 @@ public class Store extends House{
 		this.setOpposite(null);
 	}
 	public Store getOpposite(){
-		return this.opposite();
+		return this.opposite;
 	}
 	
 //	public int takeOppositePebbles(){

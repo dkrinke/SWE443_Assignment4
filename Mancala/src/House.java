@@ -19,8 +19,6 @@ public class House {
 		this.setRightNeighbor(null);
 		this.setMyTurn(turn);
 	}
-	//public House(int )
-	
 	public int getStones(){ // Returns the number of stones in the house
 		return this.stones;
 	}
@@ -43,7 +41,7 @@ public class House {
 		rightNeighbor = h;
 	}
 	public void incrementStones(){ //Increment a House's stones when sowing occurs
-		this.stoneCount++;
+		this.stones++;
 	}
 	public void setMyTurn(boolean turn){ //Set the Player's turn
 		this.myTurn = turn;
