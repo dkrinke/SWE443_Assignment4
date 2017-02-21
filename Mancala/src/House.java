@@ -1,4 +1,3 @@
-
 public class House {
 	private int stones;
 	private House rightNeighbor;
@@ -33,10 +32,10 @@ public class House {
 		return this.rightNeighbor;
 	}
 	public void setRightNeighbor(House h){// Sets the rightNeighbor of the house
-		if(h == null)
+		/*if(h == null)
 			throw new IllegalArgumentException("Right Neighbor cannot be null!");
 		if(h == this)
-			throw new IllegalArgumentException("this cannot have itself as right neighbor!");
+			throw new IllegalArgumentException("this cannot have itself as right neighbor!");*/
 
 		rightNeighbor = h;
 	}
