@@ -11,21 +11,24 @@ public class House {
 	public int getStones(){ // Returns the number of stones in the house
 		return this.stones;
 	}
-	public void setStones(){// Updates the number of stones in the house
-		
+	public void setStones(int count){// Updates the number of stones in the house
+		if(count < 0){
+			throw new IllegalArgumentException("Player can't have negative stones!");
+		}
+		this.stones = count;
 	}
 	public House getRightNeighbor(){// Returns the rightNeighbor of the house
 		return this.rightNeighbor;
 	}
-	public void setRightNeighbor(){// Sets the rightNeighbor of the house
-		
+	public void setRightNeighbor(House h){// Sets the rightNeighbor of the house
+		rightNeighbor = h;
+		if(h != null && h.getRightNeighbor() != this){
+			h.setRightNeighbor(this);
+		}
 	}
-
-	public int incrementStones(){ //Increment a House's stones when sowing occurs
-		return this.stoneCount++;
+	public void incrementStones(){ //Increment a House's stones when sowing occurs
+		this.stoneCount++;
 	}
-	
-	
 	public void setMyTurn(boolean turn){ //Set the Player's turn
 		this.myTurn = turn;
 	}
