@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by daniel on 2/20/17.
@@ -30,8 +32,8 @@ public class Pole implements stack {
         this.id = id;
     }
 
-    public ArrayList<Integer> isNextTo() {
-        return this.nextToList;
+    public List<Integer> isNextTo() {
+        return Collections.unmodifiableList(this.nextToList);
     }
 
     public void setIsNextTo(int id) {
