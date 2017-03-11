@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by daniel on 2/20/17.
@@ -15,25 +13,25 @@ interface stack {
 public class Pole implements stack {
 
     private int id = -1;
-    private ArrayList<Integer> nextToList;
+    private LinkedHashSet<Integer> nextToList;
     private ArrayList<Ring> stack;
 	
     public Pole(int id) {
         this.setId(id);
-        this.nextToList = new ArrayList<Integer>();
+        this.nextToList = new LinkedHashSet<Integer>();
         this.stack = new ArrayList<Ring>();
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public List<Integer> isNextTo() {
-        return Collections.unmodifiableList(this.nextToList);
+    public Set<Integer> isNextTo() {
+        return Collections.unmodifiableSet(this.nextToList);
     }
 
     public void setIsNextTo(int id) {
@@ -64,7 +62,8 @@ public class Pole implements stack {
     }
 
     public Ring top() {
-    	if(this.stack.size() <= 0) return null;
+    	if(this.stack.size() <= 0)
+    	    return null;
         return this.stack.get(this.count()-1);
     }
 

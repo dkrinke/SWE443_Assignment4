@@ -14,14 +14,17 @@ public class Ring {
     }
 
     public String getColor() {
-        return color;
+        return this.color;
     }
 
     public int getSize() {
-        return size;
+        return this.size;
     }
 
     public boolean setSize(int size) {
+        if(size < 0)
+            throw new IllegalArgumentException("size cannot be less than 0");
+
         boolean valueChanged = false;
         if(size >= 0){
             this.size = size;
@@ -31,6 +34,9 @@ public class Ring {
     }
 
     public boolean setColor(String color) {
+        if(color == null)
+            throw new IllegalArgumentException("color cannot be null");
+
         boolean valueChanged = false;
         if(color != null){
             this.color = color;
@@ -52,17 +58,21 @@ public class Ring {
         return false;
     }
 	public Ring getOnTopOf() {
-		return onTopOf;
+		return this.onTopOf;
 	}
 	public void setOnTopOf(Ring onTopOf) {
+        if(onTopOf == null)
+            throw new IllegalArgumentException("onTopOf cannot be null");
 		this.onTopOf = onTopOf;
 	}
 
 	public Pole getOnPole() {
-		return onPole;
+		return this.onPole;
 	}
 
 	public void setOnPole(Pole onPole) {
+        if(onPole == null)
+            throw new IllegalArgumentException("onPole cannot be null");
 		this.onPole = onPole;
 	}
 }
